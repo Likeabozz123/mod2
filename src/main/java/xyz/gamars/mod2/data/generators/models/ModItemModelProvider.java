@@ -7,7 +7,6 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import xyz.gamars.mod2.Mod2;
-import xyz.gamars.mod2.items.ItemInit;
 
 public class ModItemModelProvider extends ItemModelProvider {
 
@@ -23,6 +22,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         // withExistingParent(ItemInit.TEST_ITEM.get().getRegistryName().getPath(), modLoc("item/test_item"));
 
         builder("test_item", itemGenerated);
+        builder("test_item_2", itemGenerated);
 
 
     }
