@@ -24,6 +24,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder("test_item", itemGenerated);
         builder("test_item_2", itemGenerated);
 
+        withExistingParent("test_block", modLoc("block/test_block"));
+
 
     }
 

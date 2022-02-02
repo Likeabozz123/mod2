@@ -8,6 +8,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import xyz.gamars.mod2.init.BlockInit;
 import xyz.gamars.mod2.init.ItemInit;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -19,22 +20,19 @@ public class Mod2 {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public Mod2() {
-        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ItemInit.ITEMS.register(eventBus);
+        ItemInit.ITEMS.register(bus);
+        BlockInit.BLOCKS.register(bus);
 
-        eventBus.addListener(this::setup);
+        bus.addListener(this::setup);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    private void setup(final FMLCommonSetupEvent event) {
     }
 
 }

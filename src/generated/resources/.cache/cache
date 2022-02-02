@@ -1,4 +1,7 @@
-e07fb1afb1fefdc31d279f2990693e353c707141 assets/mod2/lang/en_us.json
+a9b0c8142a61aa4dea4a9ae113ba5b4c5eaee8e6 assets/mod2/blockstates/test_block.json
+e344fb9726ce10497064fe0d9173694d08db1064 assets/mod2/lang/en_us.json
+19ad7c59eeb6da42465990d6d1dcf38ef2a1332c assets/mod2/models/block/test_block.json
+1f32610ccb5ef159c3e1eceabc650e8422bf1f04 assets/mod2/models/item/test_block.json
 9392abac39fa3bd59fb2a92b480aacea67eacdfa assets/mod2/models/item/test_item.json
 102eff639a3cc601c48d77fe1ca621a75cdb8666 assets/mod2/models/item/test_item_2.json
 3d3779af7edfd869250562da6d67597a43443c43 data/minecraft/advancements/recipes/brewing/blaze_powder.json

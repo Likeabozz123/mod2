@@ -1,4 +1,6 @@
 {
+  "block.mod2.test_block": "Test Block",
   "item.mod2.test_item": "Test Item",
-  "item.mod2.test_item_2": "Test Item 2"
+  "item.mod2.test_item_2": "Test Item 2",
+  "itemGroup.Test Tab": "Test Tab"
 }
