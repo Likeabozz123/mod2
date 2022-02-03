@@ -2,19 +2,21 @@ package xyz.gamars.mod2.init;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 
-public class TabInit extends CreativeModeTab{
+public class TabInit{
 
-    public static final CreativeModeTab TEST_TAB = new TabInit("Test Tab");
+    public static final CreativeModeTab MATERIALS_TAB = new CreativeModeTab("materials_tab") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ItemInit.TEST_ITEM.get());
+        }
+    };
 
-    public TabInit(String label) {
-        super(label);
-    }
+    public static final CreativeModeTab BLOCKS_TAB = new CreativeModeTab("blocks_tab") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(BlockInit.TEST_BLOCK_ITEM.get());
+        }
+    };
 
-    @Override
-    public ItemStack makeIcon() {
-        return new ItemStack(ItemInit.TEST_ITEM.get());
-    }
 }

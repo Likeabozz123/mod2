@@ -11,9 +11,13 @@ import xyz.gamars.mod2.Mod2;
 public class ItemInit {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Mod2.MOD_ID);
+    public static final CreativeModeTab materialsTab = TabInit.MATERIALS_TAB;
 
-    public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item", () -> new Item(new Item.Properties().tab(TabInit.TEST_TAB)));
-    public static final RegistryObject<Item> TEST_ITEM_2 = ITEMS.register("test_item_2", () -> new Item(new Item.Properties().tab(TabInit.TEST_TAB)));
+    public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item", () -> new Item(new Item.Properties().tab(materialsTab)));
+    public static final RegistryObject<Item> TEST_STICK = ITEMS.register("test_stick", () -> new Item(new Item.Properties().tab(materialsTab)));
+
+    public static final RegistryObject<Item> TEST_ORE_CHUNK = ITEMS.register("test_ore_chunk", () -> new Item(new Item.Properties().tab(materialsTab)));
+
 
     public static void register (IEventBus bus) {
         ITEMS.register(bus);

@@ -1,6 +1,7 @@
 package xyz.gamars.mod2.data.generators.models;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -22,15 +23,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         // withExistingParent(ItemInit.TEST_ITEM.get().getRegistryName().getPath(), modLoc("item/test_item"));
 
         builder("test_item", itemGenerated);
-        builder("test_item_2", itemGenerated);
+        builder("test_stick", itemGenerated);
+        builder("test_ore_chunk", itemGenerated);
 
-        withExistingParent("test_block", modLoc("block/test_block"));
-
+        blockBuilder("test_block");
+        blockBuilder("test_ore");
 
     }
 
     private ItemModelBuilder builder(String name, ModelFile parent) {
         return getBuilder(name).parent(parent).texture("layer0", "item/" + name);
+    }
+
+    private ItemModelBuilder blockBuilder(String name) {
+        return withExistingParent(name, modLoc("block/" + name));
     }
 
     private ItemModelBuilder blockBuilder(String name, ModelFile parent) {

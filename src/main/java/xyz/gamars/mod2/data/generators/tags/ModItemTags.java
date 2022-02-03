@@ -3,9 +3,13 @@ package xyz.gamars.mod2.data.generators.tags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import xyz.gamars.mod2.Mod2;
+import xyz.gamars.mod2.init.BlockInit;
+import xyz.gamars.mod2.init.ItemInit;
 
 public class ModItemTags extends ItemTagsProvider {
     public ModItemTags(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, @Nullable ExistingFileHelper existingFileHelper) {
@@ -14,7 +18,19 @@ public class ModItemTags extends ItemTagsProvider {
 
     @Override
     protected void addTags() {
-        super.addTags();
+        tag(Tags.Items.INGOTS)
+                .add(ItemInit.TEST_ITEM.get())
+
+        ;
+        tag(Tags.Items.RAW_MATERIALS)
+                .add(ItemInit.TEST_ORE_CHUNK.get())
+
+        ;
+        tag(Tags.Items.ORES)
+                .add(BlockInit.TEST_BLOCK_ITEM.get())
+
+        ;
+
     }
 
     @Override

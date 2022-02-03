@@ -15,6 +15,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         simpleBlock(BlockInit.TEST_BLOCK.get());
+        simpleBlock(BlockInit.TEST_ORE.get());
     }
 
     @NotNull

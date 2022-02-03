@@ -1,6 +1,9 @@
 {
   "block.mod2.test_block": "Test Block",
+  "block.mod2.test_ore": "Test Ore",
   "item.mod2.test_item": "Test Item",
-  "item.mod2.test_item_2": "Test Item 2",
-  "itemGroup.Test Tab": "Test Tab"
+  "item.mod2.test_ore_chunk": "Test Ore Chunk",
+  "item.mod2.test_stick": "Test Stick",
+  "itemGroup.blocks_tab": "Blocks Tab",
+  "itemGroup.materials_tab": "Materials Tab"
 }
