@@ -6,8 +6,11 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
+import xyz.gamars.mod2.init.ArmorInit;
 import xyz.gamars.mod2.init.BlockInit;
 import xyz.gamars.mod2.init.ItemInit;
+import xyz.gamars.mod2.init.ToolInit;
 
 import java.util.function.Consumer;
 
@@ -16,31 +19,147 @@ public class ModRecipeProvider extends RecipeProvider {
         super(generator);
     }
 
+    // CRAFTING RECIPES
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(
-                BlockInit.TEST_ORE_ITEM.get()),
-                ItemInit.TEST_ITEM.get(),
-                1.0f,
-                100)
-                .unlockedBy("has_ore", has(BlockInit.TEST_ORE_ITEM.get()))
-                .save(consumer, "test_ingot1");
+    protected void buildCraftingRecipes(Consumer<FinishedRecipe/*?*/> consumer) {
+        buildSmeltingRecipes(consumer);
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(
-                ItemInit.TEST_ORE_CHUNK.get()),
-                ItemInit.TEST_ITEM.get(),
-                1.0f,
-                100)
-                .unlockedBy("has_chunk", has(ItemInit.TEST_ORE_CHUNK.get()))
-                .save(consumer, "test_ingot2");
+        stickFormat(ItemInit.TEST_ITEM.get(), ItemInit.TEST_STICK.get(), consumer);
 
-        ShapedRecipeBuilder.shaped(ItemInit.TEST_STICK.get())
-                .define('#', ItemInit.TEST_STICK.get())
+        pickaxeFormat(ItemInit.TEST_ITEM.get(), ItemInit.TEST_STICK.get(), ToolInit.TEST_PICKAXE.get(),  consumer);
+        axeFormat(ItemInit.TEST_ITEM.get(), ItemInit.TEST_STICK.get(), ToolInit.TEST_AXE.get(),  consumer);
+        shovelFormat(ItemInit.TEST_ITEM.get(), ItemInit.TEST_STICK.get(), ToolInit.TEST_SHOVEL.get(),  consumer);
+        swordFormat(ItemInit.TEST_ITEM.get(), ItemInit.TEST_STICK.get(), ToolInit.TEST_SWORD.get(),  consumer);
+        hoeFormat(ItemInit.TEST_ITEM.get(), ItemInit.TEST_STICK.get(), ToolInit.TEST_HOE.get(),  consumer);
+
+        helmetFormat(ItemInit.TEST_ITEM.get(), ArmorInit.TEST_HELMET.get(), consumer);
+        chestplateFormat(ItemInit.TEST_ITEM.get(), ArmorInit.TEST_CHESTPLATE.get(), consumer);
+        leggingsFormat(ItemInit.TEST_ITEM.get(), ArmorInit.TEST_LEGGINGS.get(), consumer);
+        bootsFormat(ItemInit.TEST_ITEM.get(), ArmorInit.TEST_BOOTS.get(), consumer);
+    }
+
+    // SMELTING RECIPES
+    public void buildSmeltingRecipes (Consumer<FinishedRecipe> consumer) {
+        inputOutput(BlockInit.TEST_ORE_ITEM.get(), ItemInit.TEST_ITEM.get(), 1.0f, 100, "test_ingot1", consumer);
+        inputOutput(ItemInit.TEST_ORE_CHUNK.get(), ItemInit.TEST_ITEM.get(), 1.0f, 100, "test_ingot2", consumer);
+    }
+
+    public static void inputOutput(ItemLike input, ItemLike output, float experience, int cookingTime, String recipeID, Consumer<FinishedRecipe> consumer) {
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(
+                        input),
+                        output,
+                        experience,
+                        cookingTime)
+                .unlockedBy("has_chunk", has(input))
+                .save(consumer, recipeID);
+    }
+
+    public static void stickFormat(ItemLike input, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', input)
                 .pattern("#")
                 .pattern("#")
-                .unlockedBy("has_ingot", has(ItemInit.TEST_ITEM.get()))
+                .unlockedBy("has_ingot", has(input))
                 .save(consumer);
     }
+
+    public static void pickaxeFormat(ItemLike material, ItemLike stick, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .define('/', stick)
+                .pattern("###")
+                .pattern(" / ")
+                .pattern(" / ")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
+
+    public static void axeFormat(ItemLike material, ItemLike stick, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .define('/', stick)
+                .pattern("## ")
+                .pattern("#/ ")
+                .pattern(" / ")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
+
+    public static void shovelFormat(ItemLike material, ItemLike stick, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .define('/', stick)
+                .pattern(" # ")
+                .pattern(" / ")
+                .pattern(" / ")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
+
+    public static void swordFormat(ItemLike material, ItemLike stick, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .define('/', stick)
+                .pattern(" # ")
+                .pattern(" # ")
+                .pattern(" / ")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
+
+    public static void hoeFormat(ItemLike material, ItemLike stick, ItemLike output,  Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .define('/', stick)
+                .pattern("## ")
+                .pattern(" / ")
+                .pattern(" / ")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
+
+    public static void helmetFormat(ItemLike material, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("   ")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
+
+    public static void chestplateFormat(ItemLike material, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .pattern("# #")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
+
+    public static void leggingsFormat(ItemLike material, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("# #")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
+
+    public static void bootsFormat(ItemLike material, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .pattern("# #")
+                .pattern("# #")
+                .pattern("   ")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
+
+
+
 
     @Override
     public String getName() {

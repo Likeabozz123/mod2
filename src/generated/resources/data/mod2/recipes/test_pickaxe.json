@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "mod2:test_item"
+    },
+    "/": {
+      "item": "mod2:test_stick"
+    }
+  },
+  "result": {
+    "item": "mod2:test_pickaxe"
+  }
+}

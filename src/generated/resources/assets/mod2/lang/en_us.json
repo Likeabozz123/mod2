@@ -1,9 +1,20 @@
 {
   "block.mod2.test_block": "Test Block",
   "block.mod2.test_ore": "Test Ore",
+  "item.mod2.test_axe": "Test Axe",
+  "item.mod2.test_boots": "Test Boots",
+  "item.mod2.test_chestplate": "Test Chestplate",
+  "item.mod2.test_helmet": "Test Helmet",
+  "item.mod2.test_hoe": "Test Hoe",
   "item.mod2.test_item": "Test Item",
+  "item.mod2.test_leggings": "Test Leggings",
   "item.mod2.test_ore_chunk": "Test Ore Chunk",
+  "item.mod2.test_pickaxe": "Test Pickaxe",
+  "item.mod2.test_shovel": "Test Shovel",
   "item.mod2.test_stick": "Test Stick",
+  "item.mod2.test_sword": "Test Sword",
+  "itemGroup.armor_tab": "Armor Tab",
   "itemGroup.blocks_tab": "Blocks Tab",
-  "itemGroup.materials_tab": "Materials Tab"
+  "itemGroup.materials_tab": "Materials Tab",
+  "itemGroup.tools_tab": "Tools Tab"
 }

@@ -1,6 +1,5 @@
 package xyz.gamars.mod2;
 
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -13,7 +12,6 @@ import xyz.gamars.mod2.init.BlockInit;
 import xyz.gamars.mod2.init.ItemInit;
 import xyz.gamars.mod2.init.ToolInit;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(Mod2.MOD_ID)
 public class Mod2 {
     public static final String MOD_ID = "mod2";

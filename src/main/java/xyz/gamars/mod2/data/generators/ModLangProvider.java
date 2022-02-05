@@ -1,6 +1,7 @@
 package xyz.gamars.mod2.data.generators;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.LanguageProvider;
 import xyz.gamars.mod2.Mod2;
 import xyz.gamars.mod2.init.BlockInit;
@@ -16,6 +17,8 @@ public class ModLangProvider extends LanguageProvider {
 
         addCreativeTab("materials_tab", "Materials Tab");
         addCreativeTab("blocks_tab", "Blocks Tab");
+        addCreativeTab("armor_tab", "Armor Tab");
+        addCreativeTab("tools_tab", "Tools Tab");
 
         add(ItemInit.TEST_ITEM.get(), "Test Item");
         add(ItemInit.TEST_STICK.get(), "Test Stick");
@@ -23,6 +26,11 @@ public class ModLangProvider extends LanguageProvider {
 
         add(BlockInit.TEST_BLOCK_ITEM.get(), "Test Block");
         add(BlockInit.TEST_ORE_ITEM.get(), "Test Ore");
+
+        addArmor("test");
+        addTools("test");
+
+
     }
 
     /*public LanguageProvider addItem (String id, String name) {
@@ -33,6 +41,26 @@ public class ModLangProvider extends LanguageProvider {
     public void addCreativeTab(String id, String name) {
         add("itemGroup." + id, name);
     }
+
+    private void addArmor(String armorMaterial) {
+        String upperCaseArmorMaterial = armorMaterial.substring(0, 1).toUpperCase() + armorMaterial.substring(1);
+        add("item.mod2." + armorMaterial + "_helmet", upperCaseArmorMaterial + " Helmet");
+        add("item.mod2." + armorMaterial + "_chestplate", upperCaseArmorMaterial + " Chestplate");
+        add("item.mod2." + armorMaterial + "_leggings", upperCaseArmorMaterial + " Leggings");
+        add("item.mod2." + armorMaterial + "_boots", upperCaseArmorMaterial + " Boots");
+    }
+
+    private void addTools(String toolMaterial) {
+        String upperCaseToolMaterial = toolMaterial.substring(0, 1).toUpperCase() + toolMaterial.substring(1);
+        add("item.mod2." + toolMaterial + "_pickaxe", upperCaseToolMaterial + " Pickaxe");
+        add("item.mod2." + toolMaterial + "_axe", upperCaseToolMaterial + " Axe");
+        add("item.mod2." + toolMaterial + "_shovel", upperCaseToolMaterial + " Shovel");
+        add("item.mod2." + toolMaterial + "_sword", upperCaseToolMaterial + " Sword");
+        add("item.mod2." + toolMaterial + "_hoe", upperCaseToolMaterial + " Hoe");
+    }
+
+
+
 
     @Override
     public String getName() {
