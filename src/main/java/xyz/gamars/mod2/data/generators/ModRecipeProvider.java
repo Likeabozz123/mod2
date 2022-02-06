@@ -5,12 +5,10 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import xyz.gamars.mod2.init.ArmorInit;
-import xyz.gamars.mod2.init.BlockInit;
-import xyz.gamars.mod2.init.ItemInit;
-import xyz.gamars.mod2.init.ToolInit;
+import xyz.gamars.mod2.init.*;
 
 import java.util.function.Consumer;
 
@@ -25,6 +23,7 @@ public class ModRecipeProvider extends RecipeProvider {
         buildSmeltingRecipes(consumer);
 
         stickFormat(ItemInit.TEST_ITEM.get(), ItemInit.TEST_STICK.get(), consumer);
+        ringWithCenterFormat(ItemInit.TEST_ITEM.get(), Items.APPLE, FoodInit.TEST_FOOD.get(), consumer);
 
         pickaxeFormat(ItemInit.TEST_ITEM.get(), ItemInit.TEST_STICK.get(), ToolInit.TEST_PICKAXE.get(),  consumer);
         axeFormat(ItemInit.TEST_ITEM.get(), ItemInit.TEST_STICK.get(), ToolInit.TEST_AXE.get(),  consumer);
@@ -158,6 +157,26 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(consumer);
     }
 
+    public static void ringFormat(ItemLike material, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
+
+    public static void ringWithCenterFormat(ItemLike material, ItemLike material2, ItemLike output, Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(output)
+                .define('#', material)
+                .define('/', material2)
+                .pattern("###")
+                .pattern("#/#")
+                .pattern("###")
+                .unlockedBy("has_ingot", has(material))
+                .save(consumer);
+    }
 
 
 

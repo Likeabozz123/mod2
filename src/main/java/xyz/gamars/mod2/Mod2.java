@@ -7,10 +7,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import xyz.gamars.mod2.init.ArmorInit;
-import xyz.gamars.mod2.init.BlockInit;
-import xyz.gamars.mod2.init.ItemInit;
-import xyz.gamars.mod2.init.ToolInit;
+import xyz.gamars.mod2.init.*;
 
 @Mod(Mod2.MOD_ID)
 public class Mod2 {
@@ -25,6 +22,7 @@ public class Mod2 {
         ItemInit.ITEMS.register(bus);
         ToolInit.TOOLS.register(bus);
         ArmorInit.ARMOR.register(bus);
+        FoodInit.FOOD.register(bus);
         BlockInit.BLOCKS.register(bus);
 
         bus.addListener(this::setup);

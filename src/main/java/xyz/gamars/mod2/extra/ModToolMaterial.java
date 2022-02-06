@@ -18,56 +18,44 @@ public enum ModToolMaterial implements Tier {
 
     ;
 
-    private final int level;
+    private final int harvestLevel;
     private final int uses;
     private final float speed;
     private final float damage;
     private final int enchantmentValue;
-    private final LazyLoadedValue<Ingredient> repairIngredient;
+    private final Supplier<Ingredient> repairIngredient;
 
-    ModToolMaterial(int level, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
-        this.level = level;
+    ModToolMaterial(int harvestLevel, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
+        this.harvestLevel = harvestLevel;
         this.uses = uses;
         this.speed = speed;
         this.damage = damage;
         this.enchantmentValue = enchantmentValue;
-        this.repairIngredient = new LazyLoadedValue<>(repairIngredient);
+        this.repairIngredient = repairIngredient;
     }
 
 
-    @Override
     public int getUses() {
-        return 0;
+        return this.uses;
     }
 
-    @Override
     public float getSpeed() {
-        return 0;
+        return this.speed;
     }
 
-    @Override
     public float getAttackDamageBonus() {
-        return 0;
+        return this.damage;
     }
 
-    @Override
     public int getLevel() {
-        return 0;
+        return this.harvestLevel;
     }
 
-    @Override
     public int getEnchantmentValue() {
-        return 0;
+        return this.enchantmentValue;
     }
 
-    @Override
     public Ingredient getRepairIngredient() {
-        return null;
-    }
-
-    @Nullable
-    @Override
-    public Tag<Block> getTag() {
-        return Tier.super.getTag();
+        return this.repairIngredient.get();
     }
 }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#/#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "mod2:test_item"
+    },
+    "/": {
+      "item": "minecraft:apple"
+    }
+  },
+  "result": {
+    "item": "mod2:test_food"
+  }
+}

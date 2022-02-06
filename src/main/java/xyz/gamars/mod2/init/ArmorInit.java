@@ -2,6 +2,8 @@ package xyz.gamars.mod2.init;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,27 +18,44 @@ public class ArmorInit {
 
     private static ModArmorMaterials armorMaterials;
 
-    public static RegistryObject<Item> TEST_HELMET = ARMOR.register("test_helmet", () -> new ArmorItem(
-            ModArmorMaterials.TEST,
-            EquipmentSlot.HEAD,
-            new Item.Properties().tab(TabInit.ARMOR_TAB)));
-    public static RegistryObject<Item> TEST_CHESTPLATE = ARMOR.register("test_chestplate", () -> new ArmorItem(
-            ModArmorMaterials.TEST,
-            EquipmentSlot.CHEST,
-            new Item.Properties().tab(TabInit.ARMOR_TAB)));
-    public static RegistryObject<Item> TEST_LEGGINGS = ARMOR.register("test_leggings", () -> new ArmorItem(
-            ModArmorMaterials.TEST,
-            EquipmentSlot.LEGS,
-            new Item.Properties().tab(TabInit.ARMOR_TAB)));
-    public static RegistryObject<Item> TEST_BOOTS = ARMOR.register("test_boots", () -> new ArmorItem(
-            ModArmorMaterials.TEST,
-            EquipmentSlot.FEET,
-            new Item.Properties().tab(TabInit.ARMOR_TAB)));
+    public static RegistryObject<Item> TEST_HELMET = helmet("test_helmet", ModArmorMaterials.TEST, TabInit.ARMOR_TAB);
+    public static RegistryObject<Item> TEST_CHESTPLATE = chestplate("test_chestplate", ModArmorMaterials.TEST, TabInit.ARMOR_TAB);
+    public static RegistryObject<Item> TEST_LEGGINGS = leggings("test_leggings", ModArmorMaterials.TEST, TabInit.ARMOR_TAB);
+    public static RegistryObject<Item> TEST_BOOTS = boots("test_boots", ModArmorMaterials.TEST, TabInit.ARMOR_TAB);
 
+
+
+    public static RegistryObject<Item> helmet(String id, ArmorMaterial material, CreativeModeTab tab) {
+        return ARMOR.register(id.toLowerCase(), () -> new ArmorItem(material, EquipmentSlot.HEAD, new Item.Properties().tab(tab)));
+    }
+    public static RegistryObject<Item> chestplate(String id, ArmorMaterial material, CreativeModeTab tab) {
+        return ARMOR.register(id.toLowerCase(), () -> new ArmorItem(material, EquipmentSlot.CHEST, new Item.Properties().tab(tab)));
+    }
+    public static RegistryObject<Item> leggings(String id, ArmorMaterial material, CreativeModeTab tab) {
+        return ARMOR.register(id.toLowerCase(), () -> new ArmorItem(material, EquipmentSlot.LEGS, new Item.Properties().tab(tab)));
+    }
+    public static RegistryObject<Item> boots(String id, ArmorMaterial material, CreativeModeTab tab) {
+        return ARMOR.register(id.toLowerCase(), () -> new ArmorItem(material, EquipmentSlot.FEET, new Item.Properties().tab(tab)));
+    }
 
     public static void register(IEventBus bus) {
         ARMOR.register(bus);
     }
 
+
+
+    // doesn't work unless inside a method or called
+    /*public static void makeHelmet(RegistryObject<Item> name, String id, ArmorMaterial material, CreativeModeTab tab) {
+        name = ARMOR.register(id.toLowerCase(), () -> new ArmorItem(material, EquipmentSlot.HEAD, new Item.Properties().tab(tab)));
+    }
+    public static void makeChestplate(RegistryObject<Item> name, String id, ArmorMaterial material, CreativeModeTab tab) {
+        name = ARMOR.register(id.toLowerCase(), () -> new ArmorItem(material, EquipmentSlot.CHEST, new Item.Properties().tab(tab)));
+    }
+    public static void makeLeggings(RegistryObject<Item> name, String id, ArmorMaterial material, CreativeModeTab tab) {
+        name = ARMOR.register(id.toLowerCase(), () -> new ArmorItem(material, EquipmentSlot.LEGS, new Item.Properties().tab(tab)));
+    }
+    public static void makeBoots(RegistryObject<Item> name, String id, ArmorMaterial material, CreativeModeTab tab) {
+        name = ARMOR.register(id.toLowerCase(), () -> new ArmorItem(material, EquipmentSlot.FEET, new Item.Properties().tab(tab)));
+    }*/
 
 }

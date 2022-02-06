@@ -4,6 +4,7 @@
   "item.mod2.test_axe": "Test Axe",
   "item.mod2.test_boots": "Test Boots",
   "item.mod2.test_chestplate": "Test Chestplate",
+  "item.mod2.test_food": "Test Food",
   "item.mod2.test_helmet": "Test Helmet",
   "item.mod2.test_hoe": "Test Hoe",
   "item.mod2.test_item": "Test Item",
@@ -15,6 +16,7 @@
   "item.mod2.test_sword": "Test Sword",
   "itemGroup.armor_tab": "Armor Tab",
   "itemGroup.blocks_tab": "Blocks Tab",
+  "itemGroup.foods_tab": "Foods Tab",
   "itemGroup.materials_tab": "Materials Tab",
   "itemGroup.tools_tab": "Tools Tab"
 }

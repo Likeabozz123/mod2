@@ -33,4 +33,12 @@ public class TabInit {
         }
     };
 
+    public static final CreativeModeTab FOODS_TAB = new CreativeModeTab("foods_tab") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(FoodInit.TEST_FOOD.get());
+        }
+    };
+
+
 }

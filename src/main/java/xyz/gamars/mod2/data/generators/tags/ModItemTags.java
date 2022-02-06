@@ -10,6 +10,7 @@ import org.jetbrains.annotations.Nullable;
 import xyz.gamars.mod2.Mod2;
 import xyz.gamars.mod2.init.BlockInit;
 import xyz.gamars.mod2.init.ItemInit;
+import xyz.gamars.mod2.init.ToolInit;
 
 public class ModItemTags extends ItemTagsProvider {
     public ModItemTags(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, @Nullable ExistingFileHelper existingFileHelper) {
@@ -28,6 +29,11 @@ public class ModItemTags extends ItemTagsProvider {
         ;
         tag(Tags.Items.ORES)
                 .add(BlockInit.TEST_BLOCK_ITEM.get())
+
+        ;
+
+        tag(ItemTags.CLUSTER_MAX_HARVESTABLES)
+                .add(ToolInit.TEST_PICKAXE.get())
 
         ;
 
