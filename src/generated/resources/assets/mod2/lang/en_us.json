@@ -1,6 +1,8 @@
 {
+  "block.mod2.powergen_block": "Power Generator",
   "block.mod2.test_block": "Test Block",
   "block.mod2.test_ore": "Test Ore",
+  "item.mod2.explosion_stick": "Explosion Stick",
   "item.mod2.test_axe": "Test Axe",
   "item.mod2.test_boots": "Test Boots",
   "item.mod2.test_chestplate": "Test Chestplate",
@@ -14,9 +16,12 @@
   "item.mod2.test_shovel": "Test Shovel",
   "item.mod2.test_stick": "Test Stick",
   "item.mod2.test_sword": "Test Sword",
+  "itemGroup.advanced_blocks_tab": "Advanced Blocks Tab",
   "itemGroup.armor_tab": "Armor Tab",
   "itemGroup.blocks_tab": "Blocks Tab",
   "itemGroup.foods_tab": "Foods Tab",
   "itemGroup.materials_tab": "Materials Tab",
-  "itemGroup.tools_tab": "Tools Tab"
+  "itemGroup.tools_tab": "Tools Tab",
+  "message.powergen": "Power generator generating %s per tick!",
+  "screen.tutorial.powergen": "Power generator"
 }

@@ -1,8 +1,14 @@
+71112901e08267f1414f6f1b2319ed0a6c9d2820 assets/mod2/blockstates/powergen_block.json
 a9b0c8142a61aa4dea4a9ae113ba5b4c5eaee8e6 assets/mod2/blockstates/test_block.json
 e412270b80957f27a73617eb754d3426bd6a4944 assets/mod2/blockstates/test_ore.json
-6ba434d5fc8c2dc95f54eb0361a72994a0c986ba assets/mod2/lang/en_us.json
+a0cc566af2a0903d4cfdae76187169b31e2e0c24 assets/mod2/lang/en_us.json
+d35d5dcb034836356cdcbfa6f56a72c48e9f693f assets/mod2/models/block/powergen/main.json
+66c3005c5a3776e81fa6db20b8e7d0e6576ea3cd assets/mod2/models/block/powergen/singleoff.json
+262f21667bc1787e80ba510fae4836427e8a5f15 assets/mod2/models/block/powergen/singleon.json
 19ad7c59eeb6da42465990d6d1dcf38ef2a1332c assets/mod2/models/block/test_block.json
 6fe2d7634ee9a62ffcbd279971e5b7429cdbdd77 assets/mod2/models/block/test_ore.json
+4f45b837f84e1210f93abfcf5a0f6894eef6c874 assets/mod2/models/item/explosion_stick.json
+a6e3d9f230be3f45cc12eff120faf6927b74efb8 assets/mod2/models/item/powergen_block.json
 194d25f343764e08b824d4ab9ad453f9bf564d91 assets/mod2/models/item/test_axe.json
 1f32610ccb5ef159c3e1eceabc650e8422bf1f04 assets/mod2/models/item/test_block.json
 3711cc01468fba6cb148600ce070f162fa4459ef assets/mod2/models/item/test_boots.json
@@ -27,8 +33,8 @@ e5b96bd2ed6fab5202f952023b940b3cc91bf1d6 data/forge/tags/items/ores.json
 a3fd5b75cc5d73364fccda977bb553f685bbafc5 data/minecraft/advancements/recipes/materials_tab/test_ingot2.json
 fd391832c54c863a80992dc2f9d2006e60936497 data/minecraft/recipes/test_ingot1.json
 f9c9070f24cefd51e71983a761915b44ec47ef0a data/minecraft/recipes/test_ingot2.json
-f768f9b24fcc902a52c1239f16c38d1504d35760 data/minecraft/tags/blocks/mineable/pickaxe.json
-f768f9b24fcc902a52c1239f16c38d1504d35760 data/minecraft/tags/blocks/needs_diamond_tool.json
+c1d523cdf2f6c70ac80b9de2d49c77a4e42a4571 data/minecraft/tags/blocks/mineable/pickaxe.json
+c1d523cdf2f6c70ac80b9de2d49c77a4e42a4571 data/minecraft/tags/blocks/needs_diamond_tool.json
 74628dfc0fd8cc8a28641cb48914fc54bea793eb data/minecraft/tags/items/cluster_max_harvestables.json
 2282ce5b5e4cd6ae48967abb1ead0bc6ef827392 data/mod2/advancements/recipes/armor_tab/test_boots.json
 a03e18f20adaaf0c7b9ae08a7994169dec53029a data/mod2/advancements/recipes/armor_tab/test_chestplate.json
@@ -41,6 +47,7 @@ a02771a8114dea3ca885c522aebd77aec2d5f494 data/mod2/advancements/recipes/tools_ta
 6bd93524174aa204f82c4cd5e972c55f802ea872 data/mod2/advancements/recipes/tools_tab/test_pickaxe.json
 efe2759bd51c280d71a1ad53dedf52dfef769eb3 data/mod2/advancements/recipes/tools_tab/test_shovel.json
 756987d32992cef9531f6426c83b7158a906566d data/mod2/advancements/recipes/tools_tab/test_sword.json
+c1c201e2bdd5c96f253ae44e730db8c21c3d6919 data/mod2/loot_tables/blocks/powergen_block.json
 1f6322249e9983ec050be6e8b2a7278769ec1346 data/mod2/loot_tables/blocks/test_ore.json
 433425e68972544d736a10cd52a2019bbafaa12b data/mod2/recipes/test_axe.json
 0a5fe5be8dcf8ee6f0fb5025c5f8c386b3317dc4 data/mod2/recipes/test_boots.json

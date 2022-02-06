@@ -4,9 +4,11 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.LanguageProvider;
 import xyz.gamars.mod2.Mod2;
+import xyz.gamars.mod2.init.AdvancedBlockInit;
 import xyz.gamars.mod2.init.BlockInit;
 import xyz.gamars.mod2.init.FoodInit;
 import xyz.gamars.mod2.init.ItemInit;
+import xyz.gamars.mod2.objects.blocks.powergen.PowergenBlock;
 
 public class ModLangProvider extends LanguageProvider {
     public ModLangProvider(DataGenerator gen, String locale) {
@@ -21,17 +23,24 @@ public class ModLangProvider extends LanguageProvider {
         addCreativeTab("armor_tab", "Armor Tab");
         addCreativeTab("tools_tab", "Tools Tab");
         addCreativeTab("foods_tab", "Foods Tab");
+        addCreativeTab("advanced_blocks_tab", "Advanced Blocks Tab");
 
         add(ItemInit.TEST_ITEM.get(), "Test Item");
         add(ItemInit.TEST_STICK.get(), "Test Stick");
         add(ItemInit.TEST_ORE_CHUNK.get(), "Test Ore Chunk");
         add(FoodInit.TEST_FOOD.get(), "Test Food");
+        add(ItemInit.EXPLOSION_STICK.get(), "Explosion Stick");
 
         add(BlockInit.TEST_BLOCK_ITEM.get(), "Test Block");
         add(BlockInit.TEST_ORE_ITEM.get(), "Test Ore");
 
         addArmor("test");
         addTools("test");
+
+        add(PowergenBlock.MESSAGE_POWERGEN, "Power generator generating %s per tick!");
+        add(PowergenBlock.SCREEN_TUTORIAL_POWERGEN, "Power generator");
+
+        add(AdvancedBlockInit.POWERGEN_BLOCK_ITEM.get(), "Power Generator");
 
 
     }

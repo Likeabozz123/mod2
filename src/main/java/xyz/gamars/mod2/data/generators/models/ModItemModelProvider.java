@@ -8,6 +8,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import xyz.gamars.mod2.Mod2;
+import xyz.gamars.mod2.init.AdvancedBlockInit;
 
 public class ModItemModelProvider extends ItemModelProvider {
 
@@ -26,12 +27,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder("test_stick", itemGenerated);
         builder("test_ore_chunk", itemGenerated);
         builder("test_food", itemGenerated);
+        builder("explosion_stick", itemGenerated);
 
         armorBuilder("test", itemGenerated);
         toolBuilder("test", itemHandheld);
 
         blockBuilder("test_block");
         blockBuilder("test_ore");
+
+        withExistingParent(AdvancedBlockInit.POWERGEN_BLOCK_ITEM.get().getRegistryName().getPath(), modLoc("block/powergen/main"));
 
     }
 

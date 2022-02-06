@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "mod2:test_block",
-    "mod2:test_ore"
+    "mod2:test_ore",
+    "mod2:powergen_block"
   ]
 }

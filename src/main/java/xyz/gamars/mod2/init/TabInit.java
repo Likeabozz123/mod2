@@ -40,5 +40,12 @@ public class TabInit {
         }
     };
 
+    public static final CreativeModeTab ADVANCED_BLOCKS_TAB = new CreativeModeTab("advanced_blocks_tab") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(AdvancedBlockInit.POWERGEN_BLOCK_ITEM.get());
+        }
+    };
+
 
 }
