@@ -1,7 +1,7 @@
 71112901e08267f1414f6f1b2319ed0a6c9d2820 assets/mod2/blockstates/powergen_block.json
 a9b0c8142a61aa4dea4a9ae113ba5b4c5eaee8e6 assets/mod2/blockstates/test_block.json
 e412270b80957f27a73617eb754d3426bd6a4944 assets/mod2/blockstates/test_ore.json
-a0cc566af2a0903d4cfdae76187169b31e2e0c24 assets/mod2/lang/en_us.json
+a3046e1d5867113675d7b961483895dc6e01356d assets/mod2/lang/en_us.json
 d35d5dcb034836356cdcbfa6f56a72c48e9f693f assets/mod2/models/block/powergen/main.json
 66c3005c5a3776e81fa6db20b8e7d0e6576ea3cd assets/mod2/models/block/powergen/singleoff.json
 262f21667bc1787e80ba510fae4836427e8a5f15 assets/mod2/models/block/powergen/singleon.json
@@ -24,6 +24,7 @@ d27ab70c4cab1d90988f1b0d9a2135c116025122 assets/mod2/models/item/test_ore_chunk.
 3979be1989239df7074afa8ddc6996d3e2418721 assets/mod2/models/item/test_shovel.json
 0514eb01d2b34848d90efd1307427f2bee5213b6 assets/mod2/models/item/test_stick.json
 8f56edc285795970588204d804dad5638e2e42a6 assets/mod2/models/item/test_sword.json
+1b79b2b58e79b6e2b526f0d8ebd23055b0a96a5e assets/mod2/models/item/throwable_item.json
 3a87b01fe7d5f676fc018dd018b327fffe52fde0 data/forge/tags/blocks/ores.json
 e5b96bd2ed6fab5202f952023b940b3cc91bf1d6 data/forge/tags/blocks/storage_blocks.json
 e1946c44bfa042ade58a538d92599959a625de7c data/forge/tags/items/ingots.json

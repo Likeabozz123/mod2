@@ -26,6 +26,7 @@ public class Mod2 {
         ArmorInit.register(bus);
         FoodInit.register(bus);
         BlockInit.register(bus);
+        EntityInit.register(bus);
         AdvancedBlockInit.register(bus);
 
         bus.addListener(this::setup);

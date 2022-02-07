@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import xyz.gamars.mod2.Mod2;
+import xyz.gamars.mod2.objects.items.ExplodingBallItem;
 import xyz.gamars.mod2.objects.items.ExplosionStickItem;
 
 public class ItemInit {
@@ -17,9 +18,10 @@ public class ItemInit {
     public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item", () -> new Item(new Item.Properties().tab(materialsTab)));
     public static final RegistryObject<Item> TEST_STICK = ITEMS.register("test_stick", () -> new Item(new Item.Properties().tab(materialsTab)));
 
-    public static final RegistryObject<Item> EXPLOSION_STICK = ITEMS.register("explosion_stick", () -> new ExplosionStickItem(new Item.Properties().tab(materialsTab)));
-
     public static final RegistryObject<Item> TEST_ORE_CHUNK = ITEMS.register("test_ore_chunk", () -> new Item(new Item.Properties().tab(materialsTab)));
+
+    public static final RegistryObject<Item> EXPLOSION_STICK = ITEMS.register("explosion_stick", () -> new ExplosionStickItem(new Item.Properties().tab(materialsTab)));
+    public static final RegistryObject<Item> THROWABLE_ITEM = ITEMS.register("throwable_item", () -> new ExplodingBallItem(new Item.Properties().tab(materialsTab)));
 
 
     public static void register (IEventBus bus) {

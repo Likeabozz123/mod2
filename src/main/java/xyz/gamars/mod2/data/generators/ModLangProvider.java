@@ -30,6 +30,7 @@ public class ModLangProvider extends LanguageProvider {
         add(ItemInit.TEST_ORE_CHUNK.get(), "Test Ore Chunk");
         add(FoodInit.TEST_FOOD.get(), "Test Food");
         add(ItemInit.EXPLOSION_STICK.get(), "Explosion Stick");
+        add(ItemInit.THROWABLE_ITEM.get(), "Throwable Item");
 
         add(BlockInit.TEST_BLOCK_ITEM.get(), "Test Block");
         add(BlockInit.TEST_ORE_ITEM.get(), "Test Ore");

@@ -28,6 +28,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder("test_ore_chunk", itemGenerated);
         builder("test_food", itemGenerated);
         builder("explosion_stick", itemGenerated);
+        builder("throwable_item", itemGenerated);
 
         armorBuilder("test", itemGenerated);
         toolBuilder("test", itemHandheld);
